@@ -1,5 +1,6 @@
 #include<iostream>
 #include "dynamicArray.h"
+#include <vld.h>
 
 using namespace std;
 

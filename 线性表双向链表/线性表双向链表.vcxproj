@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d2c76565-8719-42aa-a19c-a59eb5d54027}</ProjectGuid>
-    <RootNamespace>线性表链式存储</RootNamespace>
+    <ProjectGuid>{4343daf7-dd85-402e-aa09-452a56cb91fa}</ProjectGuid>
+    <RootNamespace>线性表双向链表</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -70,6 +70,10 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>D:\Visual Leak Detector\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Visual Leak Detector\lib\Win64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ExternalIncludePath>D:\Visual Leak Detector\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryPath>D:\Visual Leak Detector\lib\Win64;$(LibraryPath)</LibraryPath>
@@ -84,6 +88,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>vld.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -131,10 +136,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="linkArrayList.h" />
+    <ClInclude Include="doubleLinkList.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="linkArrayList.cpp" />
+    <ClCompile Include="doubleLinkList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

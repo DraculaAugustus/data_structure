@@ -1,5 +1,6 @@
 #include <iostream>
 #include "linkArrayList.h"
+#include <vld.h>
 
 using namespace std;
 
@@ -257,7 +258,8 @@ void testFunc()
 	int index = lst->findIndexByValue(max);
 	lst->delByIndex(index);
 	lst->printArrayList();
-
+	
+	delete lst;
 }
 
 int main()

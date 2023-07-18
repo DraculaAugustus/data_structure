@@ -221,20 +221,51 @@ void test_linklist()
 
 	list->popBack();
 	list->printArrayList();
-	cout << "链表的长度是：" << list->getSize() << endl;
 
-	list->delByIndex(2);
+	list->delByIndex(3);
 	list->printArrayList();
-	cout << "链表的长度是：" << list->getSize() << endl;
 
 	delete list;
+}
+
+int findMax(LinkArrayList* lst)
+{
+	int max = lst->front();
+	for (int i = 0; i < lst->getSize(); i++)
+	{
+		if (max < lst->findByindex(i))
+		{
+			max = lst->findByindex(i);
+		}
+	}
+	return max;
+}
+
+void testFunc()
+{
+	LinkArrayList* lst = new LinkArrayList;
+	
+	for (int i = 0; i < 10; i++)
+	{
+		lst->pushBack(rand() % 101);
+	}
+	lst->printArrayList();
+
+	int max = findMax(lst);
+	cout << "链表中最大值为：" << max << endl;
+
+	int index = lst->findIndexByValue(max);
+	lst->delByIndex(index);
+	lst->printArrayList();
+
 }
 
 int main()
 {
 	srand((unsigned)time(NULL));
 
-	test_linklist();
+	//test_linklist();
+	testFunc();
 
 	return 0;
 }
